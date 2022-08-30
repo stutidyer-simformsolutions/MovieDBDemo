@@ -11,7 +11,10 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import { AppNavigation } from './navigation';
+import { Store } from './redux';
 import { ApplicationStyles } from './theme';
 
 const App = () => {
@@ -22,10 +25,14 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView style={ApplicationStyles.screen}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppNavigation />
-    </SafeAreaView>
+    <Provider store={Store.store}>
+      <SafeAreaView style={ApplicationStyles.screen}>
+        <PersistGate loading={null} persistor={Store.persistor}>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        </PersistGate>
+        <AppNavigation />
+      </SafeAreaView>
+    </Provider>
   );
 };
 
