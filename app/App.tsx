@@ -15,7 +15,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { AppNavigation } from './navigation';
 import { Store } from './redux';
-import { ApplicationStyles } from './theme';
+import { ApplicationStyles, Color } from './theme';
+import { NativeBaseProvider } from 'native-base';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,12 +27,17 @@ const App = () => {
 
   return (
     <Provider store={Store.store}>
-      <SafeAreaView style={ApplicationStyles.screen}>
-        <PersistGate loading={null} persistor={Store.persistor}>
-          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        </PersistGate>
-        <AppNavigation />
-      </SafeAreaView>
+      <NativeBaseProvider>
+        <SafeAreaView style={ApplicationStyles.screen}>
+          <PersistGate loading={null} persistor={Store.persistor}>
+            <StatusBar
+              backgroundColor={Color.darkBlue}
+              barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            />
+            <AppNavigation />
+          </PersistGate>
+        </SafeAreaView>
+      </NativeBaseProvider>
     </Provider>
   );
 };
