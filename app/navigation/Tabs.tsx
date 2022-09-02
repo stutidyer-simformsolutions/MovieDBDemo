@@ -1,10 +1,17 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { ROUTES } from '../constants';
-import { CommunityScreen, MovieScreen, TrailerScreen } from '../modules';
-import { HomeStackNavigator } from './AppNavigator';
+import {
+  CommunityScreen,
+  HomeScreen,
+  MovieScreen,
+  TrailerScreen,
+} from '../modules';
+import { RootStackParamList } from './AppNavigator';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { Color } from '../theme';
+import { Strings } from '../constants';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 type BottomTabNavigatorParamList = {
   [ROUTES.HomeScreen]: undefined;
   [ROUTES.MovieScreen]: undefined;
@@ -15,10 +22,22 @@ type BottomTabNavigatorParamList = {
 const Tab = createBottomTabNavigator<BottomTabNavigatorParamList>();
 
 const tabBarLabel = {
-  [ROUTES.HomeScreen]: 'Home',
-  [ROUTES.MovieScreen]: 'Movie',
-  [ROUTES.TrailerScreen]: 'Trailer',
-  [ROUTES.CommunityScreen]: 'Community',
+  [ROUTES.HomeScreen]: Strings.home,
+  [ROUTES.MovieScreen]: Strings.movie,
+  [ROUTES.TrailerScreen]: Strings.trailer,
+  [ROUTES.CommunityScreen]: Strings.community,
+};
+
+const HomeStack = createNativeStackNavigator<RootStackParamList>();
+
+const HomeStackNavigator = () => {
+  return (
+    <HomeStack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName={ROUTES.HomeScreen}>
+      <HomeStack.Screen name={ROUTES.HomeScreen} component={HomeScreen} />
+    </HomeStack.Navigator>
+  );
 };
 
 const BottomTab = () => {
@@ -27,7 +46,14 @@ const BottomTab = () => {
       initialRouteName={ROUTES.HomeScreen}
       screenOptions={({ route }) => ({
         tabBarLabel: tabBarLabel[route.name],
+        tabBarHeight: 25,
         headerShown: false,
+        tabBarHideOnKeyboard: true,
+        tabBarActiveTintColor: Color.lightBlue,
+        tabBarInactiveTintColor: Color.white,
+        tabBarStyle: {
+          backgroundColor: Color.darkBlue,
+        },
         tabBarIcon: ({ color, size }) => {
           const icons = {
             [ROUTES.HomeScreen]: 'home',

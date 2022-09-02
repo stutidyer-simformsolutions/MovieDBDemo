@@ -3,4 +3,6 @@ export enum ROUTES {
   MovieScreen = 'MovieScreen',
   TrailerScreen = 'TrailerScreen',
   CommunityScreen = 'CommunityScreen',
+  TabRoute = 'TabRoute',
+  HomeDrawer = 'HomeDrawer',
 }
