@@ -1,10 +1,10 @@
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
-import { Icon } from 'native-base';
 import React from 'react';
 import { Text, View } from 'react-native';
 import { ROUTES, Strings } from '../../constants';
 import styles from './CustormDrawerStyles';
 import type { CustomDrawerDataType } from '../../navigation';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const CustomDrawer = (props: CustomDrawerDataType) => {
   const { navigation } = props;

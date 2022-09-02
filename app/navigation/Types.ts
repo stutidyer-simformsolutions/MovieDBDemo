@@ -4,4 +4,9 @@ type CustomDrawerDataType = {
   };
 };
 
-export type { CustomDrawerDataType };
+type NavigationDataType = {
+  navigate: (screen: string) => void;
+  openDrawer: () => void;
+};
+
+export type { CustomDrawerDataType, NavigationDataType };
