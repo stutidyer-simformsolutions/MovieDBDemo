@@ -1,16 +1,22 @@
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
-import React, { FC, useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import React, { type FC, useCallback } from 'react';
 import { View } from 'react-native';
 import { Images } from '../../assets';
-import { CustomHeader } from '../../components';
-import type { NavigationDataType } from '../../navigation';
+import { CustomDropDown, CustomHeader } from '../../components';
+import { Strings } from '../../constants';
 import { HomeActions, useAppDispatch } from '../../redux';
+import { navigateOpenDrawer } from '../../services';
 import styles from './HomeScreenStyle';
+
+const data: string[] = [
+  Strings.streaming,
+  Strings.onTv,
+  Strings.forRent,
+  Strings.inTheaters,
+];
 
 const HomeScreen: FC = () => {
   const dispatch = useAppDispatch();
-  const navigation = useNavigation<NavigationDataType>();
-
   useFocusEffect(
     useCallback(() => {
       dispatch(
@@ -26,12 +32,15 @@ const HomeScreen: FC = () => {
     <View style={styles.container}>
       <CustomHeader
         leftIconName="format-align-justify"
-        onPress={() => navigation.openDrawer()}
+        onPress={() => navigateOpenDrawer()}
         logoIcon={Images.logoIcon}
         rightIconName="account"
         isSearchIconVisible
-        onRightPress={() => navigation.openDrawer()}
+        onRightPress={() => navigateOpenDrawer()}
       />
+      <View style={styles.drowdownWarpperStyle}>
+        <CustomDropDown data={data} />
+      </View>
     </View>
   );
 };

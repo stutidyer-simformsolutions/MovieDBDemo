@@ -8,4 +8,12 @@ export default {
   tvShows: 'TV Shows',
   gotoDetail: 'Go to Detail',
   user: 'User',
+  streaming: 'Streaming',
+  onTv: 'On TV',
+  forRent: 'For Rent',
+  inTheaters: 'In Theaters',
+  today: 'Today',
+  thisWeek: ' This Week',
+  movies: 'Movies',
+  tv: 'TV',
 };
