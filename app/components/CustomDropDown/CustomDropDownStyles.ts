@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: horizontalScale(22),
   },
   dropDownMainTextStyle: {
-    color: Color.black,
+    color: Color.dropDownGradientStart,
     fontSize: moderateScale(15),
     fontWeight: '500',
     width: horizontalScale(80),
@@ -45,12 +45,13 @@ const styles = StyleSheet.create({
     height: moderateScale(15),
     width: moderateScale(15),
     marginTop: verticalScale(3),
-    tintColor: Color.dropDownGradientStart,
+    color: Color.dropDownGradientStart,
   },
   dropDownItemContainerStyle: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
+    backgroundColor: Color.darkBlue,
   },
 });
 

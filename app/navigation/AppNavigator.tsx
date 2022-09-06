@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { FC } from 'react';
+import React, { type FC } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ROUTES } from '../constants';
 import { navigationRef } from '../services';
