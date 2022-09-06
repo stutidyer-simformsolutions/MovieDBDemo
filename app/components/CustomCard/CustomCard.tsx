@@ -11,7 +11,7 @@ const CustomCard: FC<CustomCardPropType> = ({
   onCardPress,
 }) => (
   <TouchableOpacity style={styles.mainContainerStyle} onPress={onCardPress}>
-    <Image source={imageURL} style={styles.imageStyle} />
+    <Image source={{ uri: imageURL }} style={styles.imageStyle} />
     <View style={styles.roundViewStyle}>
       <Text style={styles.userScoreTextStyle}>{userScore}</Text>
     </View>

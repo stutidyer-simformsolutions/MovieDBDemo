@@ -16,4 +16,7 @@ export default {
   thisWeek: ' This Week',
   movies: 'Movies',
   tv: 'TV',
+  whatsPoplular: `What's popular`,
+  latestTrailer: 'Latest Trailer',
+  freeToWatch: 'Free To Watch',
 };

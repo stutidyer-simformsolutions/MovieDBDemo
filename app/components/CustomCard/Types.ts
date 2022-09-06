@@ -1,7 +1,5 @@
-import type { ImageSourcePropType } from 'react-native';
-
 type CustomCardPropType = {
-  imageURL: ImageSourcePropType;
+  imageURL: string;
   userScore: number;
   title: string;
   subTitle: string;
