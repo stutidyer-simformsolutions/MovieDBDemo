@@ -1,4 +1,4 @@
-import { Dimensions, Platform, ScaledSize } from 'react-native';
+import { Dimensions, Platform, type ScaledSize } from 'react-native';
 import type { MetricsTypes } from './Types';
 
 const { width, height }: ScaledSize = Dimensions.get('window');

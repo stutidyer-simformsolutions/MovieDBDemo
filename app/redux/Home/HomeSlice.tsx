@@ -1,8 +1,8 @@
 import {
-  ActionReducerMapBuilder,
+  type ActionReducerMapBuilder,
   createSlice,
-  Draft,
-  PayloadAction,
+  type Draft,
+  type PayloadAction,
 } from '@reduxjs/toolkit';
 import { ApiResponseType, ApiErrorType } from '../../services';
 import { getTrendingData } from './HomeActions';

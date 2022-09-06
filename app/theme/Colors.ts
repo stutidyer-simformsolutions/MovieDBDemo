@@ -8,4 +8,5 @@ export const Color = {
   blueGreen: '#32d9cb',
   dropDownGradientStart: '#96f6ca',
   dropDownGradientEnd: '#0edbb0',
+  lightGrey: '#bdc7d9',
 };
