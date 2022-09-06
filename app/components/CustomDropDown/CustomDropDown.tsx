@@ -1,4 +1,4 @@
-import React, { Fragment, useCallback, useState, type FC } from 'react';
+import React, { useCallback, useState, type FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Color } from '../../theme';
@@ -38,7 +38,7 @@ const CustomDropDown: FC<CustomDropDownPropTypes> = ({
           />
         </TouchableOpacity>
         {showOptions && (
-          <Fragment>
+          <>
             {data
               .filter(item => item !== selectedItem)
               .map((filteredItem: string): JSX.Element => {
@@ -52,7 +52,7 @@ const CustomDropDown: FC<CustomDropDownPropTypes> = ({
                   </TouchableOpacity>
                 );
               })}
-          </Fragment>
+          </>
         )}
         <></>
       </LinearGradient>
