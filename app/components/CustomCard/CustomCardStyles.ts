@@ -3,23 +3,25 @@ import {
   Color,
   horizontalScale,
   moderateScale,
+  scale,
   verticalScale,
 } from '../../theme';
 
 const styles = StyleSheet.create({
   mainContainerStyle: {
-    flex: 1,
+    width: moderateScale(170),
+    margin: scale(10),
     marginVertical: verticalScale(20),
   },
   imageStyle: {
     height: verticalScale(200),
     width: horizontalScale(150),
-    borderRadius: 20,
+    borderRadius: scale(20),
   },
   roundViewStyle: {
-    borderRadius: 20,
-    top: -30,
-    left: 10,
+    borderRadius: scale(20),
+    top: scale(-25),
+    left: scale(10),
     zIndex: 1,
     justifyContent: 'center',
     alignItems: 'center',

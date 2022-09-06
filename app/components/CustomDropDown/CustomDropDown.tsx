@@ -34,6 +34,7 @@ const CustomDropDown: FC<CustomDropDownPropTypes> = ({
           <Icon
             name="chevron-down"
             size={15}
+            color={Color.dropDownGradientStart}
             style={[styles.expandIconStyle, dropDownTintStyle]}
           />
         </TouchableOpacity>
